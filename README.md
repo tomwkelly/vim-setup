@@ -1,9 +1,13 @@
 # Vim Commands
 [Surround](#surround)
+
 [Comment](#comment)
+
 [Navigation](#navigation)
+
 [Replacing](#replacing)
-[Search and replace](#searchandreplace)
+
+[Search and replace](#search-and-replace)
 
 ## Surround
 
