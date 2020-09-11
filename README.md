@@ -1,13 +1,33 @@
 # Vim Commands
-[Surround](#surround)
 
-[Comment](#comment)
+Table of Contents
+=================
 
-[Navigation](#navigation)
-
-[Replacing](#replacing)
-
-[Search and replace](#search-and-replace)
+   * [Vim Commands](#vim-commands)
+      * [Surround](#surround)
+         * [s](#s)
+         * [ysiw](#ysiw)
+         * [V&lt;number&gt;&lt;movement&gt;S](#vnumbermovements)
+         * [cs](#cs)
+         * [ds](#ds)
+      * [Comment](#comment)
+         * [cml](#cml)
+         * [cmj](#cmj)
+      * [Navigation](#navigation)
+         * [gg](#gg)
+         * [G](#g)
+         * [mx](#mx)
+         * ['x](#x)
+         * ['' (Two single quotes)](#-two-single-quotes)
+         * [s](#s-1)
+         * [t](#t)
+         * [f](#f)
+      * [Replacing](#replacing)
+         * [r](#r)
+         * [c](#c)
+      * [Search and replace](#search-and-replace)
+         * [:\xs/foo/bar/g](#sfoobarg)
+         * [:s/foo/bar/g](#sfoobarg-1)
 
 ## Surround
 
