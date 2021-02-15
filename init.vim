@@ -17,12 +17,13 @@ Plug 'tpope/vim-surround'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'vim-scripts/ReplaceWithRegister'
 Plug 'joshdick/onedark.vim'
-
+Plug 'justinmk/vim-sneak'
 Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
 Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'sheerun/vim-polyglot'
-
+Plug 'justinmk/vim-dirvish'
+Plug 'ThePrimeagen/vim-be-good'
 Plug 'itchyny/lightline.vim'
 
 
