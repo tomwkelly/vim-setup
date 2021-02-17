@@ -23,7 +23,7 @@ Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'sheerun/vim-polyglot'
 Plug 'justinmk/vim-dirvish'
-Plug 'ThePrimeagen/vim-be-good'
+"Plug 'ThePrimeagen/vim-be-good'
 Plug 'itchyny/lightline.vim'
 
 
