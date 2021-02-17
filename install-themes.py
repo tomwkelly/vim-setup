@@ -16,4 +16,4 @@ run('rm -rf ./iTerm2-Color-Schemes')
 spinner.succeed()
 
 spinner.start()
-spinner.succeed('Done')
+spinner.succeed('Done! Set your theme in \033[96miTerm > Preferences > Profiles > Colors > Color Presets\033[0m (I\'m currently using Argonaut)')
