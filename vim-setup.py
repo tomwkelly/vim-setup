@@ -134,6 +134,17 @@ def install_ohmyzsh(error_on_fail=False):
     else:
         spin_fail('Oh my zsh')
 
+def install_font(error_on_fail=False):
+    spinner.start('Checking if font is installed')
+    if os.path.exists(f'{user}/Library/Fonts/Fura Code Medium Nerd Font Complete.ttf'):
+        spinner.succeed('Font is installed')
+    elif not error_on_fail:
+        spinner.text = 'Font is not installed: Installing...'
+        run(f'cp ./Fura\ Code\ Medium\ Nerd\ Font\ Complete.ttf {user}/Library/Fonts/')
+        spinner.stop()
+        install_font(True)
+    else:
+        spin_fail('Font')
 
 def main():
     program_installed('brew', 'Homebrew', install_brew)
@@ -145,7 +156,9 @@ def main():
     install_nvim_language_plugins()
     install_iterm()
     install_ohmyzsh()
+    install_font()
 
     print('\n🐝 \033[92mAll done! Run \033[96mpython3 install-themes.py\033[92m to install iTerm themes\033[0m')
+    print('\nDon\'t forget to set font in \033[96miTerm2 > Preferences > Profile > Text > Font\033[0m\n')
 if __name__ =='__main__':
     main()
