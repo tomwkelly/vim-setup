@@ -16,6 +16,9 @@ spinner = Halo(text='loading', spinner='dots')
 def run(cmd):
     return subprocess.run(cmd, shell=True,  text=True, check=True, stdout=subprocess.PIPE).stdout
 
+def run_err(cmd):
+    return subprocess.run(cmd, shell=True,  text=True, check=True, stderr=subprocess.PIPE).stderr
+
 def spin_fail(name):
     spinner.fail(f'There was an error installing {name}, please try to install manually')
 
@@ -60,6 +63,41 @@ def install_nvim():
     run('brew install neovim')
     spinner.stop()
     program_installed('nvim', 'Neovim', nvim_fail)
+
+def update_nvim(error_on_fail=False):
+    spinner.start('Updating Nvim')
+    message = 'is already installed and up-to-date'
+    not_linked = 'it\'s just not linked'
+    nvim_install = run_err('brew install --HEAD neovim')
+    luajit_install = run_err('brew install --HEAD luajit') 
+    run('brew install luarocks')
+    run('brew install luv')
+    nvim_installed = message in nvim_install 
+    luajit_installed = message in luajit_install 
+    nvim_unlinked = not_linked in nvim_install
+    luajit_unlinked = not_linked in luajit_install
+    if nvim_unlinked:
+        run('brew link neovim')
+        update_nvim()
+        return
+    if luajit_unlinked: 
+        run('brew link luajit')
+        update_nvim()
+        return
+    if nvim_installed and luajit_installed: 
+        spinner.succeed('Nvim up to date')
+        return
+    elif error_on_fail:
+        spin_fail('Nvim update')
+        return
+
+    if not luajit_installed:
+        run('brew unlink luajit && brew install --HEAD luajit')
+    if not nvim_installed:
+        run('brew unlink neovim && brew install --HEAD neovim')
+    spinner.stop()
+    update_nvim(True)
+
 
 def add_configs():
     config_dir = '$HOME/.config.nvim/'
@@ -149,6 +187,7 @@ def install_font(error_on_fail=False):
 def main():
     program_installed('brew', 'Homebrew', install_brew)
     program_installed('nvim', 'Neovim', install_nvim)
+    update_nvim()
     add_configs()
     install_plug()
     install_plug_plugins()
