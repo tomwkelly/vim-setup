@@ -14,6 +14,7 @@ Table of Contents
          * [cml](#cml)
          * [cmj](#cmj)
       * [Navigation](#navigation)
+         * [-](#-)
          * [gg](#gg)
          * [G](#g)
          * [mx](#mx)
@@ -66,6 +67,9 @@ Comment line `(can also use cmd+/)`
 Comment line and line down
 
 ## Navigation
+
+### -
+Open dirvish
 
 ### gg
 Move to top of file
