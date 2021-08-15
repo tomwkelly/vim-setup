@@ -39,6 +39,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'mbbill/undotree'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-surround'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'junegunn/gv.vim'
@@ -48,6 +49,9 @@ Plug 'maxmellon/vim-jsx-pretty'
 Plug 'justinmk/vim-sneak'
 Plug 'itchyny/lightline.vim'
 Plug 'justinmk/vim-dirvish'
+
+"Go
+Plug 'fatih/vim-go'
 
 call plug#end()
 
@@ -110,3 +114,9 @@ nnoremap <Leader>pf :lua require('telescope.builtin').find_files()<CR>
 nnoremap <leader>pw :lua require('telescope.builtin').grep_string { search = vim.fn.expand("<cword>") }<CR>
 nnoremap <leader>pb :lua require('telescope.builtin').buffers()<CR>
 nnoremap <leader>vh :lua require('telescope.builtin').help_tags()<CR>
+
+" disable vim-go :GoDef short cut (gd)
+let g:go_def_mapping_enabled = 0
+
+let g:sneak#s_next = 1
+
